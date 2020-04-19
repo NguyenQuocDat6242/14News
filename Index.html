@@ -99,7 +99,22 @@
 		</div>
 		<script type="text/javascript">
 			document.addEventListener("DOMContentLoaded" , function(){
-				
+				var menuden = document.querySelector('.menu');
+				trangthaimenuden = 'Lan1';
+				vitrimenuden = menuden.offsetTop;
+				window.addEventListener('scroll',function(){
+					if (window.pageYOffset > vitrimenuden) {
+						if (trangthaimenuden == 'Lan1') {
+							trangthaimenuden = 'Lan2';
+							menuden.classList.toggle('menuden');
+						}
+					} else if (window.pageYOffset < vitrimenuden) {
+						if (trangthaimenuden == 'Lan2') {
+							trangthaimenuden = 'Lan1';
+							menuden.classList.remove('menuden');
+						}
+					}
+				})
 			} , false)
 			
 		</script>
