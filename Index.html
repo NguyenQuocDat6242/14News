@@ -102,6 +102,11 @@
 				var menuden = document.querySelector('.menu');
 				trangthaimenuden = 'Lan1';
 				vitrimenuden = menuden.offsetTop;
+
+				var quangcao = document.querySelector('.chungtoi');
+				trangthaiquangcao = 'Lan1';
+				vitriquangcao = quangcao.offsetTop + 150;
+				hetquangcao = quangcao.offsetTop + 650;
 				window.addEventListener('scroll',function(){
 					if (window.pageYOffset > vitrimenuden) {
 						if (trangthaimenuden == 'Lan1') {
@@ -112,6 +117,19 @@
 						if (trangthaimenuden == 'Lan2') {
 							trangthaimenuden = 'Lan1';
 							menuden.classList.remove('menuden');
+						}
+					}
+
+
+					if ((window.pageYOffset > vitriquangcao) && (window.pageYOffset < hetquangcao)) {
+						if (trangthaiquangcao == 'Lan1') {
+							trangthaiquangcao = 'Lan2';
+							quangcao.classList.toggle('giuquangcao')
+						}
+					} else if ((window.pageYOffset < vitriquangcao) || (window.pageYOffset > hetquangcao)){
+						if (trangthaiquangcao == 'Lan2') {
+							trangthaiquangcao = 'Lan1';
+							quangcao.classList.remove('giuquangcao')
 						}
 					}
 				})
