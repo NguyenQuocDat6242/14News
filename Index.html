@@ -107,6 +107,10 @@
 				trangthaiquangcao = 'Lan1';
 				vitriquangcao = quangcao.offsetTop + 150;
 				hetquangcao = quangcao.offsetTop + 650;
+
+				var hienlen = document.querySelector('.s3');
+				trangthaihienlen = 'Lan1';
+				vitrihienlen = hienlen.offsetTop - 500;
 				window.addEventListener('scroll',function(){
 					if (window.pageYOffset > vitrimenuden) {
 						if (trangthaimenuden == 'Lan1') {
@@ -130,6 +134,13 @@
 						if (trangthaiquangcao == 'Lan2') {
 							trangthaiquangcao = 'Lan1';
 							quangcao.classList.remove('giuquangcao')
+						}
+					}
+
+					if (window.pageYOffset > vitrihienlen) {
+						if (trangthaihienlen == 'Lan1') {
+							trangthaihienlen = 'Lan2';
+							hienlen.classList.toggle('keolen');
 						}
 					}
 				})
